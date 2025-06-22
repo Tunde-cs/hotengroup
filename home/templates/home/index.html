@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hoten Group | Real Estate & Remodeling Experts in Atlanta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+  <!-- Brand Header -->
+  <div class="brand-header">
+    🏛️ Hoten Group | Real Estate • Remodeling • AI Tools
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1 class="display-4 fw-bold">Your Home. Upgraded with Construction & Tech Solutions</h1>
+      <p class="lead">Residential & Commercial Construction • Smart Property Management • AI-Driven Solutions</p>
+      <a href="/contact/" class="btn btn-warning btn-lg mt-3">📞 Book Your Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 fw-semibold">Our Core Services</h2>
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="service-icon">🏗️</div>
+              <h5 class="card-title">New Construction</h5>
+              <p class="card-text">Ground-up builds for residential and commercial clients.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="service-icon">🛠️</div>
+              <h5 class="card-title">Remodeling</h5>
+              <p class="card-text">Interior & exterior renovations with professional finishes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="service-icon">🏡</div>
+              <h5 class="card-title">Home Inspections</h5>
+              <p class="card-text">Licensed reports for buyers, sellers, and investors.</p>
+              <a href="{% url 'inspections' %}" class="btn btn-warning btn-sm mt-2">📋 Schedule Inspection</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div class="service-icon">💻</div>
+              <h5 class="card-title">AI Portfolio</h5>
+              <p class="card-text">Explore our backend software & AI-powered tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-dark text-white text-center py-5">
+    <div class="container">
+      <h3 class="fw-bold">Ready to Start Your Next Project?</h3>
+      <p>We’re your partners in building, remodeling, and innovation.</p>
+      <a href="/contact/" class="btn btn-outline-warning btn-lg">📋 Contact Us Now</a>
+    </div>
+  </section>
+
+</body>
+</html>

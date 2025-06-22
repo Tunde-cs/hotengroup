@@ -1,0 +1,122 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Home Inspections | Hoten Group{% endblock %}
+{% block content %}
+
+<section class="py-5" style="background: linear-gradient(90deg, #f8fafc 60%, #e0e7ff 100%);">
+  <div class="container">
+
+    <!-- Hero Image -->
+    <div class="mb-4">
+      <img src="{% static 'img/inspection-hero.jpg' %}" class="img-fluid rounded shadow-sm w-100" style="max-height: 300px; object-fit: cover;" alt="Home Inspection">
+    </div>
+
+    <div class="row">
+      <!-- Info Section -->
+      <div class="col-lg-7 mb-4">
+        <div class="card shadow-lg border-0 p-4">
+          <h1 class="display-6 fw-bold text-primary">Book a Certified Home Inspection</h1>
+          <p class="lead">Protect your investment and get peace of mind. Our licensed professionals deliver detailed inspection reports for buyers, sellers, and investors.</p>
+          <!-- InterNACHI Statement with License Number -->
+          <p class="mb-2 text-success fw-semibold" style="font-size: 1.05rem;">
+            <i class="bi bi-patch-check-fill text-primary me-1"></i>
+            As an <b>InterNACHI-certified Member </b> (License #190703), I adhere to the highest standards of practice in the industry.
+          </p>
+          <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item border-0"><i class="bi bi-house-check text-primary me-2"></i> Foundation, Roofing, Electrical & Plumbing</li>
+            <li class="list-group-item border-0"><i class="bi bi-tools text-warning me-2"></i> Appliances, Interior & Exterior Checks</li>
+            <li class="list-group-item border-0"><i class="bi bi-shield-exclamation text-danger me-2"></i> Safety, Mold, Fire & Water Damage Risks</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Availability Sidebar -->
+      <div class="col-lg-5 mb-4">
+        <div class="card shadow-sm p-3 border-0">
+          <h4 class="mb-3 text-center text-primary">View Our Availability</h4>
+          <div class="d-flex flex-wrap justify-content-center mb-3" style="gap: 0.5rem;">
+            <span class="badge rounded-pill bg-success fs-6 px-3 py-2">July 2</span>
+            <span class="badge rounded-pill bg-success fs-6 px-3 py-2">July 4</span>
+            <span class="badge rounded-pill bg-success fs-6 px-3 py-2">July 6</span>
+            <span class="badge rounded-pill bg-danger fs-6 px-3 py-2">July 10 (Booked)</span>
+            <span class="badge rounded-pill bg-success fs-6 px-3 py-2">July 12</span>
+          </div>
+          <div class="text-center small text-muted mb-1">
+            <i class="bi bi-calendar-event" style="font-size: 1.2rem;"></i>
+            Select your preferred <strong>available date</strong> below.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membership/Certification Badges -->
+    <div class="my-4 text-center">
+      <span class="d-inline-block me-3 align-middle">
+        <img src="{% static 'images/internachi.png' %}" alt="InterNACHI Member" style="height: 60px;">
+        <div class="small text-muted">InterNACHI Member<br><strong>Cert. #190703</strong></div>
+      </span>
+      <span class="d-inline-block align-middle">
+        <img src="{% static 'images/certification.png' %}" alt="Certified Inspector" style="height: 60px;">
+        <div class="small text-muted">Certified Home Inspector</div>
+      </span>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="row mt-3">
+      <div class="col-lg-10 mx-auto">
+        <div class="card p-4 shadow border-0">
+          <h2 class="mb-4 text-center text-primary">Schedule Your Inspection</h2>
+          {% if submitted %}
+            <div class="alert alert-success text-center">
+              <h4>Thank you!</h4>
+              Your inspection has been booked.<br>
+              Our team will reach out to confirm the details.
+            </div>
+          {% else %}
+            <form method="post" novalidate>
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  {{ form.name.label_tag }} {{ form.name }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  {{ form.email.label_tag }} {{ form.email }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  {{ form.phone.label_tag }} {{ form.phone }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  {{ form.property_address.label_tag }} {{ form.property_address }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  {{ form.preferred_date.label_tag }} {{ form.preferred_date }}
+                </div>
+                <div class="col-md-6 mb-3">
+                  {{ form.preferred_time.label_tag }} {{ form.preferred_time }}
+                </div>
+                <div class="col-12 mb-3">
+                  {{ form.notes.label_tag }} {{ form.notes }}
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-lg shadow-sm" style="transition: 0.3s;">Book Now</button>
+              </div>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial (below form) -->
+    <div class="row mt-4">
+      <div class="col-lg-10 mx-auto">
+        <div class="card shadow-sm p-3 border-0 bg-success-subtle">
+          <blockquote class="blockquote mb-0 text-success">
+            <p>"Hoten Group made our inspection process smooth and stress-free. Highly recommend!"</p>
+            <footer class="blockquote-footer">Sandra M., Atlanta, GA</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,16 +1,18 @@
-<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="/">Hoten Group</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/inspections/">Inspections</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</header>
+{% load static %}
+<header style="position: sticky; top: 0; z-index: 1030; background: #000; padding: 1rem 2rem; font-family: 'Open Sans', sans-serif; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
 
+  <!-- Brand -->
+  <div style="font-weight: 700; font-size: 1.3rem; color: #ffc107; letter-spacing: 1px;">
+    🏛️ Hoten Group | Home Inspections
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul style="list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; font-weight: 600; font-size: 1.1rem;">
+      <li><a href="/" style="color: #1a1f71; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#ffc107'" onmouseout="this.style.color='#1a1f71'">Home</a></li>
+      <li><a href="/inspections/" style="color: #1a1f71; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#ffc107'" onmouseout="this.style.color='#1a1f71'">Inspections</a></li>
+      <li><a href="/contact/" style="color: #1a1f71; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#ffc107'" onmouseout="this.style.color='#1a1f71'">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>

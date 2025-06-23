@@ -122,6 +122,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = str(os.path.join(BASE_DIR, 'staticfiles'))  # ✅ Force string
 
 
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'          # or your email provider's SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sales@hotengroup.com'    # Your sender email
+EMAIL_HOST_PASSWORD = 'your-email-password'  # Use environment variable for security!
+DEFAULT_FROM_EMAIL = 'sales@hotengroup.com'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
